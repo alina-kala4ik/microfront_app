@@ -3,7 +3,7 @@ import Header from './components/Header';
 import { Route, Switch, Router, Redirect } from 'react-router-dom';
 import { StylesProvider, createGenerateClassName } from '@material-ui/core/styles';
 import Progress from './components/Progress';
-import {createBrouserHistory} from 'history';
+import {createBrowserHistory} from 'history';
 
 const generateClassName = createGenerateClassName({
     productionPrefix: 'co',
@@ -13,7 +13,7 @@ const MarketingLazy = lazy(() => import('./components/MarketingApp'));
 const AuthLazy = lazy(() => import('./components/AuthApp'));
 const DashboardLazy = lazy(() => import('./components/DashboardApp'));
 
-const history = createBrouserHistory();
+const history = createBrowserHistory();
 
 const App = () => {
   const [isSignedIn, setIsSignedIn] = useState(false);
